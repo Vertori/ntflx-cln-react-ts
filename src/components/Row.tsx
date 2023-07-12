@@ -27,7 +27,7 @@ const Row = ({ title, fetchURL }: Props): JSX.Element => {
       <h2 className="text-white font-bold md:text-xl p-4">{title}</h2>
       <div className="relative flex items-center ">
         <div className="w-full h-full overflow-x-scroll whitespace-nowrap scrollbar-hide">
-          <Swiper
+        <Swiper
             modules={[Navigation]}
             loop={true}
             spaceBetween={4}
