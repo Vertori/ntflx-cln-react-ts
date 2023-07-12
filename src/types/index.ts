@@ -5,3 +5,5 @@ export type movieType = {
   release_date: string;
   overview: string;
 };
+
+
