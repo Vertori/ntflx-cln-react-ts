@@ -20,7 +20,6 @@ const Row = ({ title, fetchURL }: Props): JSX.Element => {
       setMovies(response.data.results);
     });
   }, [fetchURL]);
-  console.log(movies);
 
   return (
     <>
