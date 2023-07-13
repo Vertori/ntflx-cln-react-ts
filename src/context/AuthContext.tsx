@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { auth } from "../firebase";
+import { auth, db } from "../firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -9,9 +9,10 @@ import {
 } from "firebase/auth";
 import firebase from "firebase/compat/app";
 import "firebase/auth";
+import { setDoc, doc } from "firebase/firestore";
 
 interface AuthContextType {
-  signUp: (email: string, password: string) => Promise<UserCredential>;
+  signUp: (email: string, password: string) => void;
   logIn: (email: string, password: string) => Promise<UserCredential>;
   logOut: () => Promise<void>;
   user: firebase.UserInfo | null;
@@ -27,7 +28,10 @@ export function AuthContextProvider({
   const [user, setUser] = useState<firebase.UserInfo | null>(null);
 
   function signUp(email: string, password: string) {
-    return createUserWithEmailAndPassword(auth, email, password);
+    createUserWithEmailAndPassword(auth, email, password);
+    setDoc(doc(db, "users", email), {
+      savedShows: [],
+    });
   }
 
   function logIn(email: string, password: string) {
