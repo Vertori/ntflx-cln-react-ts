@@ -5,4 +5,5 @@ export type movieType = {
   title: string;
   release_date: string;
   overview: string;
+  img?: string;
 };
