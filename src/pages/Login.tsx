@@ -3,7 +3,7 @@ import signImg from "../assets/signImg.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 
-const Login = () => {
+const Login = (): JSX.Element => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
