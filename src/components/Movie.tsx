@@ -11,7 +11,6 @@ type Props = {
 
 const Movie = ({ movie }: Props): JSX.Element => {
   const [like, setLike] = useState<boolean>(false);
-  const [saved, setSaved] = useState<boolean>(false);
   const { user } = UserAuth();
 
   const movieID = doc(db, "users", `${user?.email}`);
@@ -19,7 +18,6 @@ const Movie = ({ movie }: Props): JSX.Element => {
   const saveShow = async () => {
     if (user?.email) {
       setLike(!like);
-      setSaved(true);
       await updateDoc(movieID, {
         savedShows: arrayUnion({
           id: movie.id,

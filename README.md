@@ -7,7 +7,7 @@
   <h1 align="center">Netflix Clone Website</h1>
 
   <p align="center">
-    <a href="https://netflix-clone-react-rf.netlify.app/"><strong>Live Website »</strong></a>
+    <a href="https://netflix-clone-react-ts-rf.netlify.app/"><strong>Live Website »</strong></a>
     <br/>
     <br/>
   </p>

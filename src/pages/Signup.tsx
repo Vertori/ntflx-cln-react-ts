@@ -6,7 +6,7 @@ import { UserAuth } from "../context/AuthContext";
 const Signup = (): JSX.Element => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const { user, signUp } = UserAuth();
+  const { signUp } = UserAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
